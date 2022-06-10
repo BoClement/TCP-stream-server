@@ -11,15 +11,14 @@ The TCP server read the serial stream on the ttyACM0 port and dispatch the infor
 
 1. Compile the server.cpp file first and then the client.cpp file.
 ```bash
-g++ utils/serialib.cpp mon_server.cpp -o server_stream
-g++ mon_client.cpp -o client_stream
+make
 ```
 2. Run the server and then the client
 ```bash
 ./server_stream
 ```
 ```bash
-./server_client
+./client_stream
 ```
 
 # Limitations
