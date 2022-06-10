@@ -9,9 +9,7 @@
 #include <unistd.h>
 #include <netdb.h>
 #include "utils/serialib.h"
-
-#define PORT 5000
-#define MAXLINE 1024
+#include "socket.h"
 
 using namespace std;
 

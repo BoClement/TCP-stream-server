@@ -7,8 +7,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "utils/serialib.h"
-#define PORT 5000
-#define MAXBUFFER 1024
+#include "socket.h"
 
 using namespace std;
 
@@ -25,7 +24,7 @@ int main()
 {
     int client, server;
     bool isExit = false;
-    char buffer[MAXBUFFER];
+    char buffer[MAXLINE];
 	int err;
     struct sockaddr_in server_addr;
     socklen_t size;
