@@ -1,6 +1,6 @@
 # Server Client TCP - serial stream
 
-The TCP server read the serial stream on the ttyACM0 port and dispatch the information to the client when connected.
+The TCP server read the serial stream on the ttyACM0 port and dispatch the information to the client when connected. 
 
 # Requirements
 
@@ -21,6 +21,13 @@ make
 ./client_stream
 ```
 
-# Limitations
+# MAJ
+1. THe stream can be converted into log (and hence rinex) with the rtklib.demo lib. First launch the server and then do :
+```bash
+sudo ./str2str -in tcpcli://127.0.0.1:5000 -out /output_directery/log_tcp.ubx
+```
 
-Un seul client accepté mais je peux regarder le multi threading pour plusieurs. 
+2. Several clients may connect the same server thanks to threading
+
+
+

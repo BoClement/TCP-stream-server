@@ -20,7 +20,7 @@ int main()
 	struct sockaddr_in servaddr;
 	int err;
 
-	// ===================== SOCKET INIT =====================
+	// -------------- SOCKET INIT --------------
 
 	client = socket(AF_INET, SOCK_STREAM, 0);
 	if (client < 0) 
@@ -43,20 +43,20 @@ int main()
     printf("Connection established \n");
 
 
-	// ===================== CONNECTION OK =====================
+	// -------------- CONNECTION OK --------------
 
 	//recv(client,buffer,sizeof(buffer),0);
 	//printf("message received : %s \n",buffer);
 
 	while(1){
-		// ===================== RECEIVE STREAM =====================
+		// -------------- RECEIVE STREAM --------------
 		err =recv(client,buffer,sizeof(buffer),0);
 		printf("%s ",buffer);
 		if(err<0){
 		    printf("error : client message failed \n");
 			sleep(1);
 		}
-		// ===================== TCHAT =====================
+		// -------------- TCHAT --------------
 		// printf(">>");
 		// scanf("%s", &buffer);
 		// send(client,buffer,sizeof(buffer),0);
@@ -75,3 +75,6 @@ int main()
 	close(client);
 	return 0;
 }
+
+
+//sudo ./str2str -in tcpcli://127.0.0.1:5000 -out /home/beauc/Documents/Orolia2s/log_tcp.ubx
